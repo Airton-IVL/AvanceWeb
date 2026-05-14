@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    min-height: 100vh;
+    color: #e5e5e5;
+
+    background:
+        linear-gradient(rgba(4, 8, 18, 0.84), rgba(4, 8, 18, 0.94)),
+        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 42px;
+
+    background: rgba(9, 15, 28, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    transition: 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 13px 42px;
+    background: rgba(6, 10, 20, 0.95);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+}
+
+.header h1 {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg, #ff3b3b, #8a2be2, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    white-space: nowrap;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #d7d7d7;
+    font-size: 0.92rem;
+    transition: color 0.25s, opacity 0.25s, transform 0.25s;
+}
+
+.header nav a:hover {
+    color: #00c6ff;
+}
+
+/* =============================================
+   :not(:hover)
+   ============================================= */
+.header nav:has(a:hover) a:not(:hover) {
+    opacity: 0.35;
+    transform: scale(0.94);
+    color: #888;
+}
+
+
+.modo-btn {
+    background: linear-gradient(135deg, #1c2335, #141927);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.modo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.22);
+}
+
+
+.hero {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-contenido {
+    max-width: 850px;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    animation: fadeUp 1s ease;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+
+    border-radius: 999px;
+    border: 1px solid rgba(0, 198, 255, 0.3);
+
+    color: #00c6ff;
+    font-size: 0.82rem;
+    background: rgba(0, 198, 255, 0.07);
+}
+
+.hero h2 {
+    font-size: 2.7rem;
+    margin-bottom: 16px;
+
+    background: linear-gradient(90deg, #ff3b3b, #8a2be2, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #d4d4d4;
+}
+
+/* SECCIONES */
+
+.productos {
+    padding: 55px 42px;
+    scroll-margin-top: 95px;
+}
+
+.productos h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-align: center;
+
+    background: linear-gradient(90deg, #ff3b3b, #8a2be2, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* CARD */
+
+.card {
+    height: 590px;
+    width: 100%;
+
+    background: rgba(12, 18, 32, 0.84);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.38);
+    transition: transform 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 198, 255, 0.3);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================================
+   :not(:hover)
+   ============================================= */
+.grid:has(.card:hover) .card:not(:hover) {
+    opacity: 0.45;
+    filter: brightness(0.55) saturate(0.4);
+    transform: scale(0.97);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+}
+
+
+/* CONTENEDOR DE IMAGEN */
+
+.img-container {
+    width: 100%;
+    height: 225px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 17px;
+    padding: 4px;
+
+    background: linear-gradient(120deg,
+            #ff1a1a,
+            #8a2be2,
+            #00c6ff,
+            #00ff88,
+            #ff1a1a);
+    background-size: 300% 300%;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    animation: bordeRGB 4s linear infinite;
+    transition: 0.3s ease;
+}
+
+/* IMAGEN COMPLETA */
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+    padding: 12px;
+
+    border-radius: 12px;
+    background: rgba(5, 5, 15, 0.95);
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-container:hover {
+    box-shadow:
+        0 0 15px rgba(255, 26, 26, 0.35),
+        0 0 25px rgba(0, 198, 255, 0.35),
+        0 0 35px rgba(138, 43, 226, 0.3);
+}
+
+.img-container:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 198, 255, 0.5));
+}
+
+/* INFORMACION */
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card h3 {
+    font-size: 1.12rem;
+    line-height: 1.4;
+    color: #ffffff;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.precio {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #00c6ff;
+    text-align: center;
+}
+
+/* TABLA */
+.specs {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.045);
+    border-radius: 12px;
+}
+
+.specs tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s ease, opacity 0.2s ease;
+    cursor: default;
+}
+
+.specs tr:last-child {
+    border-bottom: none;
+}
+
+.specs th,
+.specs td {
+    padding: 9px 10px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+.specs th {
+    width: 38%;
+    text-align: left;
+    color: #b7b7b7;
+    font-weight: 600;
+}
+
+.specs td {
+    text-align: right;
+    color: #f2f2f2;
+}
+
+/* =============================================
+   :not(:hover) — SPECS TABLE: la fila hoverada
+   se ilumina; las demás se apagan sutilmente
+   ============================================= */
+.specs:has(tr:hover) tr:not(:hover) {
+    opacity: 0.4;
+    background: transparent;
+}
+
+.specs tr:hover {
+    background: rgba(0, 198, 255, 0.08);
+}
+
+.specs tr:hover th {
+    color: #00c6ff;
+}
+
+.specs tr:hover td {
+    color: #ffffff;
+}
+
+
+/* BOTON */
+.card button {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px 20px;
+
+    background: linear-gradient(135deg, #ff1a1a, #8a2be2, #00c6ff);
+    border: none;
+    border-radius: 13px;
+
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s, filter 0.25s;
+}
+
+.card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.3);
+}
+
+/* =============================================
+   :not(:hover)
+   ============================================= */
+.grid:has(button:hover) button:not(:hover) {
+    opacity: 0.5;
+    filter: saturate(0.3) brightness(0.7);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 30px;
+    padding: 24px;
+    text-align: center;
+
+    background: rgba(9, 15, 28, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cfcfcf;
+}
+
+/* ANIMACIONES */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bordeRGB {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* MODO CLARO */
+body.light {
+    color: #111;
+
+    background:
+        linear-gradient(rgba(245, 247, 255, 0.86), rgba(235, 238, 245, 0.94)),
+        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body.light .header,
+body.light .footer {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .header.scrolled {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+body.light .header nav a {
+    color: #111;
+}
+
+body.light .hero-contenido,
+body.light .card {
+    background: rgba(255, 255, 255, 0.84);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .hero p {
+    color: #222;
+}
+
+body.light .card h3 {
+    color: #111;
+}
+
+body.light .img-container img {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+body.light .specs {
+    background: rgba(0, 0, 0, 0.045);
+}
+
+body.light .specs tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .specs th {
+    color: #333;
+}
+
+body.light .specs td {
+    color: #111;
+}
+
+body.light .footer {
+    color: #111;
+}
+
+body.light .modo-btn {
+    background: #111827;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .header.scrolled {
+        padding: 16px 20px;
+    }
+
+    .header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero h2 {
+        font-size: 2.1rem;
+    }
+
+    .hero-contenido {
+        padding: 30px 24px;
+    }
+}
+
+@media(max-width: 600px) {
+    .productos {
+        padding: 42px 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: auto;
+        min-height: 590px;
+    }
+
+    .img-container {
+        height: 220px;
+    }
+
+    .header h1 {
+        font-size: 1.45rem;
+    }
+
+    .header nav a {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Avengers Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tienda.css">
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <h1>AVENGERS</h1>
+
+        <nav class="navbar" aria-label="Menu principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#procesadores">Procesadores</a>
+            <a href="#graficas">Graficas</a>
+            <a href="#laptops">Laptops</a>
+            <a href="#monitores">Monitores</a>
+            <a href="#perifericos">Perifericos</a>
+            <a href="#placas">Placas Madre</a>
+            <a href="#ram">RAM</a>
+        </nav>
+
+        <button id="modoToggle" class="modo-btn" type="button">Modo claro</button>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-contenido">
+            <span class="etiqueta">Hardware premium</span>
+            <h2>Potencia real para tu setup gamer</h2>
+            <p>Procesadores, graficas, laptops, monitores y perifericos de alto rendimiento.</p>
+        </div>
+    </section>
+
+    <section class="productos" id="procesadores">
+        <h2>Procesadores</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="img/procesador1.png" alt="AMD Ryzen 7 7800X3D" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>AMD Ryzen 7 7800X3D</h3>
+                    <p class="precio">S/ 1450</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Nucleos</th>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th>Hilos</th>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <th>Boost</th>
+                            <td>Hasta 5.0 GHz</td>
+                        </tr>
+                        <tr>
+                            <th>Cache</th>
+                            <td>96 MB L3</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://megatech.pk/wp-content/uploads/2025/04/14700k.png" alt="Intel Core i7 14700K"
+                        loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>Intel Core i7-14700K</h3>
+                    <p class="precio">S/ 1550</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Nucleos</th>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <th>Hilos</th>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <th>Boost</th>
+                            <td>Hasta 5.6 GHz</td>
+                        </tr>
+                        <tr>
+                            <th>Cache</th>
+                            <td>33 MB</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="graficas">
+        <h2>Tarjetas Graficas</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/FFD3278D-2D22-419A-8EA4-7D97CD90D4FE/v2/img/kv/pd.png"
+                        alt="NVIDIA GeForce RTX 4090" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>ASUS ROG RTX 4090</h3>
+                    <p class="precio">S/ 8500</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Memoria</th>
+                            <td>24 GB GDDR6X</td>
+                        </tr>
+                        <tr>
+                            <th>CUDA</th>
+                            <td>16384</td>
+                        </tr>
+                        <tr>
+                            <th>Bus</th>
+                            <td>384-bit</td>
+                        </tr>
+                        <tr>
+                            <th>Arquitectura</th>
+                            <td>Ada Lovelace</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/128A96DB-DA90-4C45-A7A7-2A56F9F4F48A"
+                        alt="ASUS ROG Astral GeForce RTX 5090" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>ASUS ROG Astral RTX 5090</h3>
+                    <p class="precio">S/ 12500</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Memoria</th>
+                            <td>32 GB GDDR7</td>
+                        </tr>
+                        <tr>
+                            <th>CUDA</th>
+                            <td>21760</td>
+                        </tr>
+                        <tr>
+                            <th>Bus</th>
+                            <td>512-bit</td>
+                        </tr>
+                        <tr>
+                            <th>Arquitectura</th>
+                            <td>Blackwell</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="laptops">
+        <h2>Laptops Gamer</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/79716bcc-5027-40a8-99a2-56b7721a203f/v1/img/performance/rog-strix-g-16.png"
+                        alt="ASUS ROG Strix G" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>ASUS ROG Strix G18 2025</h3>
+                    <p class="precio">S/ 13500</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Procesador</th>
+                            <td>Ryzen 9 9955HX</td>
+                        </tr>
+                        <tr>
+                            <th>Grafica</th>
+                            <td>RTX 5070 Laptop</td>
+                        </tr>
+                        <tr>
+                            <th>Pantalla</th>
+                            <td>18" 2.5K 240Hz</td>
+                        </tr>
+                        <tr>
+                            <th>Memoria</th>
+                            <td>32 GB DDR5</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="monitores">
+        <h2>Monitores Gamer</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/ls49dg930slxpe/gallery/pe-odyssey-oled-g9-g93sd-ls49dg930slxpe-544448304?$1164_776_PNG$"
+                        alt="Samsung Odyssey OLED G9" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>Samsung Odyssey OLED G9</h3>
+                    <p class="precio">S/ 6700</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Tamano</th>
+                            <td>49 pulgadas</td>
+                        </tr>
+                        <tr>
+                            <th>Resolucion</th>
+                            <td>5120 x 1440</td>
+                        </tr>
+                        <tr>
+                            <th>Frecuencia</th>
+                            <td>240 Hz</td>
+                        </tr>
+                        <tr>
+                            <th>Respuesta</th>
+                            <td>0.03 ms</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/5A4B62A0-F7B0-4417-B777-CBFD76A44889/w1000/h732"
+                        alt="ROG Swift OLED PG32UCDM" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>ROG Swift OLED PG32UCDM</h3>
+                    <p class="precio">S/ 5200</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Tamano</th>
+                            <td>31.5 pulgadas</td>
+                        </tr>
+                        <tr>
+                            <th>Resolucion</th>
+                            <td>3840 x 2160</td>
+                        </tr>
+                        <tr>
+                            <th>Frecuencia</th>
+                            <td>240 Hz</td>
+                        </tr>
+                        <tr>
+                            <th>Panel</th>
+                            <td>QD-OLED</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="perifericos">
+        <h2>Perifericos Gamer</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://pamas.com.pe/wp-content/uploads/2023/11/Pamas_GPXS2_P_1.png"
+                        alt="Logitech G PRO X SUPERLIGHT 2" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>Logitech G PRO X SUPERLIGHT 2</h3>
+                    <p class="precio">S/ 520</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Sensor</th>
+                            <td>HERO 2</td>
+                        </tr>
+                        <tr>
+                            <th>DPI</th>
+                            <td>Hasta 44K</td>
+                        </tr>
+                        <tr>
+                            <th>Peso</th>
+                            <td>60 g</td>
+                        </tr>
+                        <tr>
+                            <th>Conexion</th>
+                            <td>LIGHTSPEED</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dl.razerzone.com/src/3811/3811-1-en-v2.png" alt="Razer BlackShark V2 Pro"
+                        loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>Razer BlackShark V2 Pro</h3>
+                    <p class="precio">S/ 750</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Tipo</th>
+                            <td>Inalambrico</td>
+                        </tr>
+                        <tr>
+                            <th>Uso</th>
+                            <td>Esports</td>
+                        </tr>
+                        <tr>
+                            <th>Microfono</th>
+                            <td>Desmontable</td>
+                        </tr>
+                        <tr>
+                            <th>Audio</th>
+                            <td>Alto rendimiento</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="placas">
+        <h2>Placas Madre</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/29C004F7-7B1F-4EBF-9099-7168B520A0EE/v1/img/kv/pd.png"
+                        alt="ASUS ROG Maximus Z790 Hero" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>ASUS ROG Maximus Z790 Hero</h3>
+                    <p class="precio">S/ 2600</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Socket</th>
+                            <td>LGA 1700</td>
+                        </tr>
+                        <tr>
+                            <th>Chipset</th>
+                            <td>Intel Z790</td>
+                        </tr>
+                        <tr>
+                            <th>Memoria</th>
+                            <td>DDR5</td>
+                        </tr>
+                        <tr>
+                            <th>Expansion</th>
+                            <td>PCIe 5.0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="productos" id="ram">
+        <h2>Memorias RAM</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://assets.corsair.com/image/upload/c_pad%2Cq_85%2Ch_1100%2Cw_1100%2Cf_auto/products/Memory/vengeance-rgb-amd-ddr5-blk-config/Gallery/Vengeance-RGB-DDR5-2UP-32GB-GRAY_01.webp"
+                        alt="Corsair Vengeance RGB DDR5" loading="lazy">
+                </div>
+
+                <div class="card-info">
+                    <h3>Corsair Vengeance RGB DDR5</h3>
+                    <p class="precio">S/ 480</p>
+
+                    <table class="specs">
+                        <tr>
+                            <th>Capacidad</th>
+                            <td>32 GB</td>
+                        </tr>
+                        <tr>
+                            <th>Formato</th>
+                            <td>2 x 16 GB</td>
+                        </tr>
+                        <tr>
+                            <th>Velocidad</th>
+                            <td>6000 MT/s</td>
+                        </tr>
+                        <tr>
+                            <th>Latencia</th>
+                            <td>CL36</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button type="button" onclick="comprar()">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Stark Industries</p>
+    </footer>
+
+
+    <script src="js/tienda.js"></script>
+
+</body>
+
+</html>
