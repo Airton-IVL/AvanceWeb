@@ -23,6 +23,31 @@ body {
     background-attachment: fixed;
 }
 
+
+/* EFECTO EXTRA: LINEAS DIAGONALES TIPO ROG */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.035) 50%,
+            rgba(255, 255, 255, 0.035) 75%,
+            transparent 75%,
+            transparent
+        );
+
+    background-size: 42px 42px;
+    opacity: 0.32;
+}
+
 /* HEADER */
 .header {
     width: 100%;
@@ -64,6 +89,10 @@ body {
     color: transparent;
 
     white-space: nowrap;
+
+    text-shadow:
+        0 0 10px rgba(255, 26, 26, 0.4),
+        0 0 20px rgba(0, 198, 255, 0.3);
 }
 
 .header nav {
@@ -193,6 +222,7 @@ body {
 /* CARD */
 
 .card {
+    position: relative;
     height: 590px;
     width: 100%;
 
@@ -219,6 +249,28 @@ body {
     transform: translateY(-6px);
     border-color: rgba(0, 198, 255, 0.3);
     box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+}
+
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 26, 26, 0.35), rgba(0, 198, 255, 0.25), rgba(138, 43, 226, 0.35));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 /* =============================================
@@ -400,8 +452,12 @@ body {
 }
 
 .card button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 12px rgba(0, 198, 255, 0.3);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1);
+    box-shadow:
+        0 0 12px rgba(255, 26, 26, 0.35),
+        0 0 22px rgba(0, 198, 255, 0.35),
+        0 0 32px rgba(138, 43, 226, 0.28);
 }
 
 /* =============================================
@@ -523,6 +579,10 @@ body.light .modo-btn {
     color: white;
 }
 
+body.light::before {
+    opacity: 0.16;
+}
+
 /* RESPONSIVE */
 @media(max-width: 900px) {
     .header {
@@ -573,5 +633,319 @@ body.light .modo-btn {
 
     .header nav a {
         font-size: 0.85rem;
+    }
+}
+
+/* =====================================================
+   MEJORAS VISUALES EXTRA - FUTURISTA GAMER
+   ===================================================== */
+
+/* Particulas flotantes de fondo */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(circle, rgba(0, 198, 255, 0.45) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 26, 26, 0.35) 1px, transparent 1px),
+        radial-gradient(circle, rgba(138, 43, 226, 0.38) 1px, transparent 1px);
+
+    background-size: 90px 90px, 140px 140px, 210px 210px;
+    background-position: 0 0, 45px 70px, 120px 40px;
+    animation: particulasGamer 18s linear infinite;
+    opacity: 0.38;
+}
+
+/* Capa scanline tipo monitor gamer */
+.scanline,
+body .scanline {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.035) 0px,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 5px
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.12;
+}
+
+/* Barra de busqueda y filtros futuristas */
+.barra-controles,
+.controles-productos {
+    max-width: 1100px;
+    margin: 0 auto 35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.buscador,
+.filtro,
+.input-busqueda,
+.select-filtro {
+    min-width: 240px;
+    padding: 13px 17px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 198, 255, 0.35);
+    outline: none;
+    color: #ffffff;
+    background: rgba(8, 14, 28, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 12px rgba(0, 198, 255, 0.08),
+                0 0 18px rgba(0, 198, 255, 0.08);
+    transition: 0.25s ease;
+}
+
+.buscador::placeholder,
+.input-busqueda::placeholder {
+    color: rgba(229, 229, 229, 0.65);
+}
+
+.buscador:focus,
+.filtro:focus,
+.input-busqueda:focus,
+.select-filtro:focus {
+    border-color: rgba(255, 26, 26, 0.65);
+    box-shadow: 0 0 12px rgba(255, 26, 26, 0.22),
+                0 0 25px rgba(0, 198, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+/* Etiquetas gamer para ofertas o novedades */
+.badge,
+.badge-gamer,
+.oferta,
+.nuevo,
+.hot-sale {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 5;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff1a1a, #8a2be2, #00c6ff);
+    box-shadow: 0 0 14px rgba(255, 26, 26, 0.35),
+                0 0 22px rgba(0, 198, 255, 0.25);
+    animation: pulsoBadge 1.9s ease-in-out infinite;
+}
+
+.card:nth-child(2n) .badge,
+.card:nth-child(2n) .badge-gamer,
+.card:nth-child(2n) .oferta,
+.card:nth-child(2n) .nuevo,
+.card:nth-child(2n) .hot-sale {
+    background: linear-gradient(135deg, #00c6ff, #8a2be2, #00ff88);
+}
+
+/* Efecto holograma en imagenes */
+.img-container::after {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -80%;
+    width: 70%;
+    height: 260%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.34),
+        rgba(0, 198, 255, 0.22),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.55s ease;
+    pointer-events: none;
+}
+
+.img-container:hover::after {
+    left: 135%;
+}
+
+/* Boton comprar con pulso gamer suave */
+.card button {
+    position: relative;
+    overflow: hidden;
+    animation: pulsoBoton 2.7s ease-in-out infinite;
+}
+
+.card button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-22deg);
+    transition: 0.45s ease;
+}
+
+.card button:hover::before {
+    left: 130%;
+}
+
+/* Seccion de marcas estilo neon */
+.marcas,
+.brands {
+    padding: 40px 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.marca,
+.brand-item {
+    padding: 14px 22px;
+    border-radius: 15px;
+    color: #e5e5e5;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 16px rgba(0, 198, 255, 0.08);
+    letter-spacing: 1px;
+    transition: 0.25s ease;
+}
+
+.marca:hover,
+.brand-item:hover {
+    color: #00c6ff;
+    transform: translateY(-4px);
+    border-color: rgba(0, 198, 255, 0.42);
+    box-shadow: 0 0 18px rgba(0, 198, 255, 0.22),
+                0 0 28px rgba(138, 43, 226, 0.18);
+}
+
+/* Footer mas profesional */
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff1a1a, #8a2be2, #00c6ff, transparent);
+    box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+.footer-redes,
+.footer-info,
+.footer-links {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer a,
+.footer-redes a,
+.footer-links a {
+    color: #00c6ff;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.footer a:hover,
+.footer-redes a:hover,
+.footer-links a:hover {
+    color: #ff3b3b;
+    text-shadow: 0 0 10px rgba(255, 26, 26, 0.45);
+}
+
+/* Modo claro adaptado */
+body.light::after {
+    opacity: 0.18;
+}
+
+body.light .buscador,
+body.light .filtro,
+body.light .input-busqueda,
+body.light .select-filtro {
+    color: #111;
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+body.light .marca,
+body.light .brand-item {
+    color: #111;
+    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Animaciones extra */
+@keyframes particulasGamer {
+    0% {
+        background-position: 0 0, 45px 70px, 120px 40px;
+    }
+
+    100% {
+        background-position: 220px 220px, 265px 290px, 340px 260px;
+    }
+}
+
+@keyframes pulsoBadge {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: brightness(1.22);
+    }
+}
+
+@keyframes pulsoBoton {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(0, 198, 255, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(0, 198, 255, 0.18),
+                    0 0 25px rgba(255, 26, 26, 0.12);
+    }
+}
+
+@media(max-width: 600px) {
+    .buscador,
+    .filtro,
+    .input-busqueda,
+    .select-filtro {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .barra-controles,
+    .controles-productos {
+        padding: 0 20px;
+    }
+
+    .marcas,
+    .brands {
+        padding: 32px 20px;
     }
 }
