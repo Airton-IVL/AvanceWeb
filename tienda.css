@@ -95,10 +95,10 @@ body::before {
         0 0 20px rgba(0, 198, 255, 0.3);
 }
 
-.header nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.navbar{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
 .header nav a {
@@ -990,6 +990,22 @@ body.light .brand-item {
     transition: .35s ease;
 
     z-index: 999;
+}
+
+.mega-dropdown:hover .mega-menu{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+.mega-menu{
+    pointer-events: none;
+}
+
+.mega-dropdown:hover .mega-menu{
+    pointer-events: auto;
 }
 
 .mega-dropdown:hover .mega-menu{
