@@ -1046,3 +1046,11 @@ body.light .brand-item {
 
     transform: translateX(6px);
 }
+
+.mega-menu{
+    display:none !important;
+}
+
+.mega-dropdown:hover .mega-menu{
+    display:block !important;
+}
