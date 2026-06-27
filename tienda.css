@@ -949,3 +949,100 @@ body.light .brand-item {
         padding: 32px 20px;
     }
 }
+
+/* ==========================
+   MEGA MENU FUTURISTA
+   ========================== */
+
+.mega-dropdown{
+    position: relative;
+}
+
+.mega-menu{
+
+    position: absolute;
+
+    top: 170%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(20px);
+
+    width: 520px;
+
+    background: rgba(10,15,30,.92);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(0,198,255,.15);
+
+    box-shadow:
+        0 0 30px rgba(0,198,255,.12),
+        0 15px 45px rgba(0,0,0,.45);
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .35s ease;
+
+    z-index: 999;
+}
+
+.mega-dropdown:hover .mega-menu{
+
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+.mega-menu h3{
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #00c6ff;
+
+    letter-spacing: 2px;
+}
+
+.mega-grid{
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 12px;
+}
+
+.mega-grid a{
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.04);
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: .25s;
+}
+
+.mega-grid a:hover{
+
+    background: rgba(0,198,255,.12);
+
+    color: #00c6ff;
+
+    transform: translateX(6px);
+}
